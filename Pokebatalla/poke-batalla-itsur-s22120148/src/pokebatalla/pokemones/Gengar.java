@@ -29,14 +29,23 @@ public class Gengar extends Pokemon{
        this.defensa = 60;
        this.nivel = 1;
        this.precision = 5;
+       this.xp=64;
     }
     public Gengar(String nombre){
         this();
         this.nombre = nombre;
     }
-public void atacar (Pokemon oponente, Gengar.Movimientos movimientosAutilizar){
+    
+    @Override
+    public Enum[] getMovimientos(){
+        return Gengar.Movimientos.values();
+    }
+    
+    @Override 
+    public void atacar(Pokemon oponente, int ordinalMovimiento){
         Movimiento instanciaMovimiento;
-        switch(movimientosAutilizar){
+        Gengar.Movimientos movimientoAUtilizar = Gengar.Movimientos.values()[ordinalMovimiento];
+        switch(movimientoAUtilizar){
             case TINIEBLAS :
                 instanciaMovimiento = new Tinieblas();
                 break;
@@ -49,6 +58,10 @@ public void atacar (Pokemon oponente, Gengar.Movimientos movimientosAutilizar){
             default:
                 throw new AssertionError();
         }
+                if(this.hp<=0){
+                    System.out.println("Gengar esta agotado y no puede hacer mas movimientos");
+                    return;
+                }
+                instanciaMovimiento.utilizar(this, oponente);
+        }
     }
-    
-}

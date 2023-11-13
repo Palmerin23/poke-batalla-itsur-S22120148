@@ -33,9 +33,17 @@ public class Lapras extends Pokemon {
         this();
         this.nombre = nombre;
     }
-public void atacar (Pokemon oponente, Lapras.Movimientos movimientosAutilizar){
+    
+    @Override
+    public Enum[] getMovimientos(){
+        return Lapras.Movimientos.values();
+    }
+    
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento){
         Movimiento instanciaMovimiento;
-        switch(movimientosAutilizar){
+        Lapras.Movimientos movimientoAUtilizar = Lapras.Movimientos.values()[ordinalMovimiento];
+                switch(movimientoAUtilizar){
             case MARTILLAZO:
                 instanciaMovimiento = new Martillazo();
                 break;
@@ -48,6 +56,11 @@ public void atacar (Pokemon oponente, Lapras.Movimientos movimientosAutilizar){
             default:
                 throw new AssertionError();
         }
+                if(this.hp<=0){
+                    System.out.println("Lapras esta cansado y no puede hacer mas movimientos");
+                    return;
+                }
+                instanciaMovimiento.utilizar(this, oponente);
     }
     
 }
