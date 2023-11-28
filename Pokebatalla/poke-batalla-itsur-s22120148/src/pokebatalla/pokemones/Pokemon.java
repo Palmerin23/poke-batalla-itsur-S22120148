@@ -4,13 +4,14 @@
  */
 package pokebatalla.pokemones;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author STACY CHAVEZ PALMERIN 
  */
-public abstract class Pokemon {
+public abstract class Pokemon implements Serializable{
 
    //Atributos
     protected String nombre;

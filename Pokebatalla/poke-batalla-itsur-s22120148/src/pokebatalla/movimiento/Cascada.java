@@ -8,7 +8,7 @@ package pokebatalla.movimiento;
  *
  * @author stacy
  */
-public class Cascada extends MovimientoFisico{
+public class Cascada extends MovimientoFisico {
     public Cascada(){
         this.tipo = TiposDeMovimiento.AGUA;
         this.potencia = 80;

@@ -8,11 +8,12 @@ package pokebatalla.pokemones;
  *
  * @author STACY CHAVEZ PALMERIN 
  */
+import java.io.Serializable;
 import pokebatalla.movimiento.Cascada;
 import pokebatalla.movimiento.Movimiento;
 import pokebatalla.movimiento.RayoBurbuja;
 import pokebatalla.movimiento.Refugio;
-public class Squirtle extends Pokemon{
+public class Squirtle extends Pokemon implements Serializable{
     
     public enum Movimientos{
         CASCADA,

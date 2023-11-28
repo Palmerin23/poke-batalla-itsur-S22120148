@@ -4,6 +4,7 @@
  */
 package pokebatalla.pokemones;
 
+import java.io.Serializable;
 import pokebatalla.movimiento.Tinieblas;
 import pokebatalla.movimiento.Movimiento;
 import pokebatalla.movimiento.RayoConfuso;
@@ -14,7 +15,7 @@ import pokebatalla.movimiento.Lenguetazo;
  * @author STACY CHAVEZ PALMERIN
  */
 
-public class Gengar extends Pokemon{
+public class Gengar extends Pokemon implements Serializable{
     
     public enum Movimientos{
         TINIEBLAS,

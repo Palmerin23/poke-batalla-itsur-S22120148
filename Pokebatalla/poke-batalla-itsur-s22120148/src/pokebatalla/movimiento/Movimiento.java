@@ -55,9 +55,11 @@ public class Movimiento {
         objetivo.recibirDanio(danio);
         
         //Imprimir efecto del movimiento en consola
+        System.out.println("El Contricante tiene la siguiente vida:"+ objetivo);
         System.out.println(usuario.getClass().getSimpleName() + " aplica" +
                             this.getClass().getSimpleName() + " a " +
                               objetivo.getClass().getSimpleName() + " Y causa danio de " +
                               danio);
+        
     } 
 }

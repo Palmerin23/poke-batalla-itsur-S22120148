@@ -4,23 +4,27 @@
  */
 package pokebatalla;
 
+import java.io.Serializable;
 import pokebatalla.pokemones.Squirtle;
 import pokebatalla.pokemones.Lapras;
 import pokebatalla.pokemones.Gengar;
 import pokebatalla.Batallas.Batalla;
 import pokebatalla.Batallas.Entrenador;
+import pokebatalla.Batallas.FileManager.FileManager;
 
 /**
  *
  * @author STACY CHAVEZ PALMERIN
  */
-public class Main {
+public class Main implements Serializable{
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Batalla b = FileManager.leerPartida();
+        if(b==null){
         System.out.println("Hello PokeBatalla!");
         Gengar gengarSalvaje = new Gengar("ALEGRIA");
         Lapras laprasSalvaje = new Lapras("DESAGRADO");
@@ -33,10 +37,9 @@ public class Main {
        Entrenador entrenador2 = new Entrenador("JAYDEN");
        entrenador2.capturarPokemon(gengarSalvaje);
        entrenador2.capturarPokemon(squirtleSalvaje);
-       
-       Batalla batalla = new Batalla(entrenador1, entrenador2);
-       batalla.desarrollarBatalla();
-        
+       b = new Batalla(entrenador1, entrenador2);
+        }
+        b.desarrollarBatalla();
        
     }
     

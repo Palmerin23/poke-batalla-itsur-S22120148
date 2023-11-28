@@ -4,14 +4,15 @@
  */
 package pokebatalla.Batallas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import pokebatalla.pokemones.Pokemon;
 /**
  *
- * @author stacy
+ * @author stacy chavez palmerin 
  */
-public class Entrenador {
+public class Entrenador implements Serializable{
     protected String nombre;
     protected List<Pokemon> pokemonsCapturados;
     protected Pokemon pokemonActual;

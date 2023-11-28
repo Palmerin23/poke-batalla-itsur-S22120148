@@ -8,12 +8,13 @@ package pokebatalla.pokemones;
  *
  * @author STACY CHAVEZ PALMERIN 
  */
+import java.io.Serializable;
 import pokebatalla.movimiento.Neblina;
 import pokebatalla.movimiento.Movimiento;
 import pokebatalla.movimiento.RayoHielo;
 import pokebatalla.movimiento.Martillazo;
 
-public class Lapras extends Pokemon {
+public class Lapras extends Pokemon implements Serializable{
     
     public enum Movimientos{
         NEBLINA,
